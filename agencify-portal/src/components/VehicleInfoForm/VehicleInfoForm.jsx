@@ -1,9 +1,16 @@
 import React from "react";
+import "./VehicleInfoForm.css";
+
 
 const VehicleInfo = () => {
   return (
     <div className="insurance-form">
-      <h2 className="form-title">1. Sum insured: 1,000,000 premium: 47,500</h2>
+      <div className="form-title">
+        <span className="title-left">
+          1. Sum insured: 1,000,000 premium: 47,500
+        </span>
+        <span className="title-right">Upload log book &gt;</span>
+      </div>
       <form>
         <div className="form-row">
           <div className="form-group">
@@ -18,7 +25,6 @@ const VehicleInfo = () => {
             <label htmlFor="model">Model</label>
             <select id="model" defaultValue="Saloon">
               <option>Saloon</option>
-              {/* Add more options as needed */}
             </select>
           </div>
         </div>

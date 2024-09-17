@@ -3,25 +3,42 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 24px;
-  max-width: 800px;
+ /* max-width: 800px;*/
   margin: 0 auto;
 }
 
 .form-title {
+  display: flex;
+  justify-content: space-between; /* Distributes the content between the left and right */
+  align-items: center; /* Vertically centers the items */
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 16px;
 }
 
+.title-left {
+  flex: 1; /* Ensures the left part takes up the available space */
+}
+
+.title-right {
+  white-space: nowrap; /* Ensures the right text doesn't wrap */
+  font-size: 1rem;
+  color: #d43f3f; /* Adjust the color to make the right part more prominent */
+  cursor: pointer;
+  border-bottom: solid #d43f3f;
+}
+
 .form-row {
   display: flex;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 24px; /* Increased gap between form fields */
+  margin-bottom: 24px; /* More space between rows */
 }
 
 .form-group {
   flex: 1;
+  max-width: 300px; /* Set max-width if needed */
 }
+
 
 label {
   display: block;
@@ -32,20 +49,21 @@ label {
 
 input,
 select {
-  width: 100%;
-  padding: 8px;
+  width: 100%; /* Ensure input/select takes full width of form-group */
+  padding: 12px; /* Increase padding for larger input fields */
+  height: 40px; /* Control height of input fields */
   border: 1px solid #d1d5db;
   border-radius: 4px;
   font-size: 1rem;
 }
 
+
 select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  background-size: 16px;
-  padding-right: 32px;
+  height: 45px; /* Ensure select elements take the same height */
+  width: 200px; /* Ensure they take the same width */
+  line-height: normal; /* Ensure text is vertically centered */
+  padding: 0 12px; /* Adjust padding to fit the select text */
+  appearance: none; /* Remove default styling */
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -54,8 +72,60 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-size: contain;
   opacity: 0.5;
 }
+#regNo, #logbookNo, #model, #bodyType, #make, #colour, #sittingCapacity, #chassisNo, #engineNo, #tonnage, #coverStartDate {
+  height: 45px; /* Set height for all input and select elements */
+  width: 320px; /* Set width for all input and select elements */
+  box-sizing: border-box; /* Ensures padding and borders are included in the width/height */
+}
+#model, #bodyType, #make {
+  height: 45px; /* Set height for dropdowns */
+  width: 320px; /* Set width for dropdowns */
+  padding-right: 40px; /* Space for the custom arrow */
+  box-sizing: border-box; /* Ensure the box model includes padding and borders */
+  appearance: none; /* Remove default browser styling for select */
+  background-color: #ffffff; /* Same background color as input fields */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center; /* Position the arrow on the right */
+  background-size: 16px; /* Size of the arrow */
+  border: 1px solid #d1d5db; /* Same border as input fields */
+  border-radius: 4px; /* Same border-radius as input fields */
+  font-size: 1rem;
+  line-height: 1.5; /* Vertically align text */
+}
+#coverStartDate {
+  position: relative;
+  height: 45px; /* Match the height of the other input fields */
+  width: 320px; /* Match the width of the other input fields */
+  box-sizing: border-box; /* Include padding and borders in the width and height */
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding-right: 40px; /* Leave space for the custom icon */
+}
+#coverStartDate::-webkit-calendar-picker-indicator {
+  opacity: 0; /* Hide the default icon */
+}
+#coverStartDate::before {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d43f3f'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
 
 @media (max-width: 768px) {
+  .form-title {
+    flex-direction: column; /* Stack the items on smaller screens */
+    align-items: flex-start;
+  }
+
   .form-row {
     flex-direction: column;
   }
