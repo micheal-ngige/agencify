@@ -1,0 +1,38 @@
+/* Documents Section */
+.documents-section h2 {
+  margin-bottom: 10px;
+}
+
+
+.document-uploads {
+  display: flex;
+  gap: 20px; 
+  flex-wrap: wrap; 
+}
+
+
+.document-upload {
+  padding: 10px;
+  border: 2px dotted #d43f3f; 
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.document-upload label {
+  font-weight: bold;
+  color: #333;
+}
+
+.document-upload input[type="file"] {
+  padding: 5px;
+  border: none;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.document-upload input[type="file"]:hover {
+  background-color: #f1f1f1;
+}
