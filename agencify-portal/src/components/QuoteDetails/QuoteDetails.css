@@ -1,38 +1,128 @@
-/* Documents Section */
+/* Style for the Documents section title */
 .documents-section h2 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #000;
+  font-weight: bold;
+ 
+}
+.quote-details{
+  margin-top: -75px;
+}
+/* Style for preview images */
+.uploaded-preview {
+  margin-top: 10px;
+  max-width: 100%;
+  max-height: 60px; /* Adjust as needed */
+  object-fit: contain;
 }
 
-
+/* Document uploads container - Horizontal alignment, no wrap */
 .document-uploads {
   display: flex;
-  gap: 20px; 
-  flex-wrap: wrap; 
+  justify-content: space-between; /* Distribute space evenly between the fields */
+   
+
+  white-space: nowrap; /* Prevent wrapping of items */
 }
 
+/* Wrapper for each document upload - Ensures correct spacing and alignment */
+.document-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px; /* Space between label and document box */
+  min-width: 220px; /* Minimum width to keep the fields readable */
+  flex-shrink: 0; /* Prevent shrinking when screen size is small */
+}
 
+/* Style for each document upload container */
 .document-upload {
-  padding: 10px;
-  border: 2px dotted #d43f3f; 
+  width: 100px; /* Width to ensure all fields fit horizontally */
+  height: 80px;
+  border: 2px dotted #737B7D; /* Dotted border */
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
   align-items: center;
-}
-
-.document-upload label {
-  font-weight: bold;
-  color: #333;
-}
-
-.document-upload input[type="file"] {
-  padding: 5px;
-  border: none;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
   background-color: #f9f9f9;
-  cursor: pointer;
 }
 
-.document-upload input[type="file"]:hover {
-  background-color: #f1f1f1;
+/* Style for labels inside the document-upload boxes */
+.document-upload label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #EF3C45;
+  cursor: pointer; /* Makes the label act like a button */
+  position: relative; /* Make the label a positioned element */
+}
+/* Line below the label */
+.document-upload label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; /* Adjust the distance from the text */
+  height: 2px; /* Height of the line */
+  background-color: #EF3C45; /* Line color */
+}
+/* Hide the default file input but keep it functional */
+.file-input {
+  display: none;
+}
+
+/* Style for the file input button (removing default style) */
+.document-upload input[type="file"]::file-selector-button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Ensuring document uploads are scrollable horizontally on smaller screens */
+.document-uploads::-webkit-scrollbar {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.document-uploads::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.document-uploads::-webkit-scrollbar-track {
+  background-color: #D1D5DB;
+}
+
+/* Style for the paragraph text in the document upload section */
+.documents-section .document-wrapper .document-p {
+  color: #000; /* Dark color for the paragraph text */
+  font-size: 15px; /* Adjust font size */
+  font-weight: 800;
+  margin-bottom: 8px; /* Add some spacing below the paragraph */
+  
+  margin-bottom: 20px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 1024px) {
+  .document-upload {
+    width: 180px; /* Reduce width slightly on smaller screens */
+    height: 120px; /* Adjust height as well */
+  }
+}
+
+@media (max-width: 768px) {
+  .document-upload {
+    width: 160px; /* Further reduce width for mobile devices */
+    height: 110px;
+  }
+
+  .document-uploads {
+    gap: 10px; /* Reduce gap for smaller devices */
+  }
 }

@@ -11,8 +11,7 @@ function Sidebar() {
           alt="Agencify Logo"
         />
       </div>
-      <div className="user-info">
-        <i className="fas fa-user user-icon"></i>
+      <div className="user-info">        
         <span>Hi, John Doe</span>
       </div>
       <nav>

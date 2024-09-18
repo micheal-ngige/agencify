@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  font-weight: 500;
 }
 
 .user-info img.avatar {
@@ -55,7 +56,7 @@ nav ul li {
 nav ul li i {
   margin-right: 10px;
   font-size: 18px;
-  color: #ee0f12;
+  color: #ccc9c9;
  
 }
 
