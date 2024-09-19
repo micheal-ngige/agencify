@@ -1,0 +1,67 @@
+.payment-plans-section {
+  margin-bottom: 20px;
+}
+
+.payment-plans-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.payment-plan-options label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #000;
+  position: relative;
+  padding-left: 35px; /* Adjust for custom radio */
+  cursor: pointer;
+}
+
+.payment-plan-options input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create custom radio button */
+.payment-plan-options input[type="radio"] + span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ee0f12;
+  background-color: white;
+}
+
+.payment-plan-options input[type="radio"]:checked + span::before {
+  background-color: #ee0f12;
+}
+
+.payment-plan-options input[type="radio"]:checked + span::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Styling for the span next to the input */
+.payment-plan-options span {
+  position: relative;
+  padding-left: 30px; /* Space for the custom radio */
+  color: #000;
+}
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #f3e7e7;
+  margin-top: 20px; /* Reduced top margin to decrease gap */
+  margin-bottom: 10px; /* Reduced bottom margin */
+}

@@ -2,7 +2,13 @@ import React from "react";
 import QuoteDetails from "../QuoteDetails/QuoteDetails";
 import ClientInformation from "../ClientInformation/ClientInformation";
 import VehicleInfo from "../VehicleInfoForm/VehicleInfoForm";
+import Valuer from "../Valuer/Valuer";
+import PaymentPlans from "../PaymentPlans/PaymentPlans";
+import PaymentMethod from "../PaymentMethod/PaymentMethod";
 import "./Dashboard.css";
+
+
+
 
 function Dashboard() {
   return (
@@ -19,6 +25,9 @@ function Dashboard() {
         <ClientInformation />
         <VehicleInfo />
         <QuoteDetails />
+        <Valuer />
+        <PaymentPlans />
+        <PaymentMethod />
       </div>
     </div>
   );

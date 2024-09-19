@@ -1,0 +1,58 @@
+.payment-method-options {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Faint boundaries */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  margin-bottom: 20px; /* Spacing below the box */
+}
+
+.payment-method-options label {
+  display: block;
+  font-size: 1em;
+  color: #000;
+  position: relative;
+  padding-left: 35px; /* Adjust for custom radio */
+  cursor: pointer;
+}
+
+/* Hide the default radio button */
+.payment-method-options input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Custom radio button */
+.payment-method-options input[type="radio"] + span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ee0f12; /* Red border */
+  background-color: white;
+}
+
+.payment-method-options input[type="radio"]:checked + span::before {
+  background-color: #ee0f12; /* Red background when checked */
+}
+
+.payment-method-options input[type="radio"]:checked + span::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Styling for the span next to the input */
+.payment-method-options span {
+  position: relative;
+  padding-left: 30px; /* Space for the custom radio */
+  color: #000;
+}

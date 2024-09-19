@@ -51,6 +51,7 @@ function QuoteDetails() {
           )}
         </div>
       </div>
+      <div className="divider"></div>
     </div>
   );
 }

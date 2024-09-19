@@ -4,7 +4,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Make sidebar full height */
+  height: 300vh; /* Make sidebar full height */
 }
 
 .logo {
